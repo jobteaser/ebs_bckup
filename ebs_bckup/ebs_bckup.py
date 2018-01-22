@@ -22,7 +22,8 @@ def lambda_handler(event, context):
         ec = boto3.client('ec2', region_name=aws_region)
         reservations = ec.describe_instances(
             Filters=[
-                {'Name': 'tag-value', 'Values': [EC2_INSTANCE_TAG]},
+                {'Name': 'tag-value', 'Values': ['true']},
+                {'Name': 'tag-key', 'Values': [EC2_INSTANCE_TAG]},
             ]
         )['Reservations']
         instances = sum(
