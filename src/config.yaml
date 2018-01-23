@@ -1,0 +1,11 @@
+retention: 10
+selector:
+  regions:
+  - eu-west-1
+  tags:
+    - name: tag-value
+      values:
+      - true
+    - name: tag-key
+      values:
+      - "jobteaser.com/etcd/backup"
